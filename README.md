@@ -15,6 +15,12 @@ copy and refreshes it from GitHub Pages:
 
 Pages serves `docs/` from `main`, so a push publishes. Always run `build`
 before committing: the served file is the built one, not the service files.
+`build` bumps `revision` only when the content changed; the app downloads at
+most once a day and takes the file only if its revision is newer.
+
+To ship the same data inside the app, copy `docs/catalogue.json` over
+`Packages/DuebloomCore/Sources/DuebloomCore/Resources/Catalogue.json` in the
+app repo and run `swift test` there.
 
 ## Rules
 
