@@ -28,6 +28,8 @@ OUTPUT = ROOT / "docs" / "catalogue.json"
 SLUG = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
 DOMAIN = re.compile(r"^[a-z0-9-]+(\.[a-z0-9-]+)+$")
 UNITS = {"day", "week", "month", "year"}
+# Same list as the app's CatalogueTests; the add screen's category chips use these.
+CATEGORIES = {"Streaming", "Music", "Work", "Learning", "Fitness", "Storage", "News", "Gaming", "Other"}
 # Matches CatalogueEntry.staleTestDays in the app: re-check prices before the app hides them.
 STALE_DAYS = 180
 
@@ -58,6 +60,8 @@ def check_entry(stem, e, today, errors, warnings):
     for key in ("name", "category"):
         if not isinstance(e.get(key), str) or not e[key].strip():
             errors.append(f"{where}: {key} is required")
+    if e.get("category") and e["category"] not in CATEGORIES:
+        errors.append(f"{where}: category must be one of {sorted(CATEGORIES)}")
     if not DOMAIN.match(str(e.get("domain", ""))):
         errors.append(f"{where}: domain must be a bare domain such as netflix.com")
     if not isinstance(e.get("aliases", []), list):
@@ -126,10 +130,18 @@ def validate():
 def build():
     config, services = validate()
     entries = [{k: e[k] for k in ENTRY_KEYS if k in e} for _, e in services.values()]
-    out = {"version": config["version"], "note": config["note"],
+    out = {"version": config["version"], "revision": 0, "note": config["note"],
            "popular": config.get("popular", []), "entries": entries}
+    # The app takes a download only if its revision is higher than what it has,
+    # so bump it (UTC yyyymmddHHMM) when the content changes and keep it otherwise.
+    previous = json.loads(OUTPUT.read_text()) if OUTPUT.exists() else {}
+    unchanged = {k: v for k, v in previous.items() if k != "revision"} == {k: v for k, v in out.items() if k != "revision"}
+    if unchanged and previous.get("revision"):
+        out["revision"] = previous["revision"]
+    else:
+        out["revision"] = int(datetime.datetime.now(datetime.timezone.utc).strftime("%Y%m%d%H%M"))
     OUTPUT.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n")
-    print(f"wrote {OUTPUT.relative_to(ROOT)}")
+    print(f"wrote {OUTPUT.relative_to(ROOT)} (revision {out['revision']}{', unchanged' if unchanged else ''})")
 
 
 def new(service_id):
