@@ -1,0 +1,9 @@
+{
+  "id": "coursera",
+  "name": "Coursera",
+  "aliases": [
+    "Coursera Plus"
+  ],
+  "domain": "coursera.org",
+  "category": "Learning"
+}

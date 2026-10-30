@@ -1,0 +1,9 @@
+{
+  "id": "wsj",
+  "name": "The Wall Street Journal",
+  "aliases": [
+    "WSJ"
+  ],
+  "domain": "wsj.com",
+  "category": "News"
+}

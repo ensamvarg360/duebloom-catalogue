@@ -1,0 +1,11 @@
+{
+  "id": "youtube-premium",
+  "name": "YouTube Premium",
+  "aliases": [
+    "YouTube",
+    "YT Music"
+  ],
+  "domain": "youtube.com",
+  "category": "Streaming",
+  "cancellationURL": "https://www.youtube.com/paid_memberships"
+}

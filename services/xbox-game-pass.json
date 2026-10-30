@@ -1,0 +1,48 @@
+{
+  "id": "xbox-game-pass",
+  "name": "Game Pass",
+  "aliases": [
+    "Xbox Game Pass",
+    "Xbox"
+  ],
+  "domain": "xbox.com",
+  "category": "Gaming",
+  "cancellationURL": "https://account.microsoft.com/services",
+  "typicalPlans": [
+    {
+      "label": "PC Game Pass",
+      "amount": "13.99",
+      "currencyCode": "USD",
+      "interval": {
+        "unit": "month",
+        "count": 1
+      },
+      "note": "New members: $1 for the first 14 days"
+    },
+    {
+      "label": "Premium",
+      "amount": "14.99",
+      "currencyCode": "USD",
+      "interval": {
+        "unit": "month",
+        "count": 1
+      },
+      "note": "New members: $1 for the first 14 days"
+    },
+    {
+      "label": "Ultimate",
+      "amount": "22.99",
+      "currencyCode": "USD",
+      "interval": {
+        "unit": "month",
+        "count": 1
+      },
+      "note": "New members: $1 for the first 14 days"
+    }
+  ],
+  "priceInfo": {
+    "region": "US",
+    "checkedOn": "2026-10-30",
+    "sourceURL": "https://www.xbox.com/en-us/games/store/xbox-game-pass-ultimate/cfq7ttc0khs0"
+  }
+}

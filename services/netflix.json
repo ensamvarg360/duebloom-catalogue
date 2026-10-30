@@ -1,0 +1,41 @@
+{
+  "id": "netflix",
+  "name": "Netflix",
+  "domain": "netflix.com",
+  "category": "Streaming",
+  "cancellationURL": "https://www.netflix.com/cancelplan",
+  "typicalPlans": [
+    {
+      "label": "Standard with ads",
+      "amount": "8.99",
+      "currencyCode": "USD",
+      "interval": {
+        "unit": "month",
+        "count": 1
+      }
+    },
+    {
+      "label": "Standard",
+      "amount": "19.99",
+      "currencyCode": "USD",
+      "interval": {
+        "unit": "month",
+        "count": 1
+      }
+    },
+    {
+      "label": "Premium",
+      "amount": "26.99",
+      "currencyCode": "USD",
+      "interval": {
+        "unit": "month",
+        "count": 1
+      }
+    }
+  ],
+  "priceInfo": {
+    "region": "US",
+    "checkedOn": "2026-10-30",
+    "sourceURL": "https://help.netflix.com/en/node/24926"
+  }
+}

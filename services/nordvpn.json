@@ -1,0 +1,9 @@
+{
+  "id": "nordvpn",
+  "name": "NordVPN",
+  "aliases": [
+    "VPN"
+  ],
+  "domain": "nordvpn.com",
+  "category": "Other"
+}

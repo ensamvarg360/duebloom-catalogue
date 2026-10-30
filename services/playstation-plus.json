@@ -1,0 +1,45 @@
+{
+  "id": "playstation-plus",
+  "name": "PlayStation Plus",
+  "aliases": [
+    "PS Plus",
+    "PSN",
+    "Sony"
+  ],
+  "domain": "playstation.com",
+  "category": "Gaming",
+  "typicalPlans": [
+    {
+      "label": "Essential",
+      "amount": "10.99",
+      "currencyCode": "USD",
+      "interval": {
+        "unit": "month",
+        "count": 1
+      }
+    },
+    {
+      "label": "Extra",
+      "amount": "16.99",
+      "currencyCode": "USD",
+      "interval": {
+        "unit": "month",
+        "count": 1
+      }
+    },
+    {
+      "label": "Premium",
+      "amount": "19.99",
+      "currencyCode": "USD",
+      "interval": {
+        "unit": "month",
+        "count": 1
+      }
+    }
+  ],
+  "priceInfo": {
+    "region": "US",
+    "checkedOn": "2026-10-30",
+    "sourceURL": "https://www.playstation.com/en-us/ps-plus/"
+  }
+}

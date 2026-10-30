@@ -1,0 +1,9 @@
+{
+  "id": "washington-post",
+  "name": "The Washington Post",
+  "aliases": [
+    "WaPo"
+  ],
+  "domain": "washingtonpost.com",
+  "category": "News"
+}

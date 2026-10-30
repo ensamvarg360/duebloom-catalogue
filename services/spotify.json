@@ -1,0 +1,50 @@
+{
+  "id": "spotify",
+  "name": "Spotify",
+  "domain": "spotify.com",
+  "category": "Music",
+  "cancellationURL": "https://www.spotify.com/account/subscription/",
+  "typicalPlans": [
+    {
+      "label": "Student",
+      "amount": "6.99",
+      "currencyCode": "USD",
+      "interval": {
+        "unit": "month",
+        "count": 1
+      }
+    },
+    {
+      "label": "Individual",
+      "amount": "12.99",
+      "currencyCode": "USD",
+      "interval": {
+        "unit": "month",
+        "count": 1
+      }
+    },
+    {
+      "label": "Duo",
+      "amount": "18.99",
+      "currencyCode": "USD",
+      "interval": {
+        "unit": "month",
+        "count": 1
+      }
+    },
+    {
+      "label": "Family",
+      "amount": "21.99",
+      "currencyCode": "USD",
+      "interval": {
+        "unit": "month",
+        "count": 1
+      }
+    }
+  ],
+  "priceInfo": {
+    "region": "US",
+    "checkedOn": "2026-10-30",
+    "sourceURL": "https://www.spotify.com/us/premium/"
+  }
+}

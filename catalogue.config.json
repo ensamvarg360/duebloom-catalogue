@@ -1,5 +1,14 @@
 {
-  "version": 1,
-  "note": "US list prices read from each provider's own page on priceInfo.checkedOn. Examples only, not what a user pays.",
-  "popular": []
+  "version": 2,
+  "note": "Plans, prices and trial lengths are US list prices in USD, read from the provider's own page on the date in priceInfo (see docs/PRICING.md). An entry with no priceInfo has no verified price. Prices are shown only for the region and only while recent (CatalogueEntry.localized).",
+  "popular": [
+    "netflix",
+    "spotify",
+    "youtube-premium",
+    "disney-plus",
+    "hulu",
+    "max",
+    "amazon-prime",
+    "apple-music"
+  ]
 }

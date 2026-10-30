@@ -1,6 +1,1047 @@
 {
-  "version": 1,
-  "note": "US list prices read from each provider's own page on priceInfo.checkedOn. Examples only, not what a user pays.",
-  "popular": [],
-  "entries": []
+  "version": 2,
+  "note": "Plans, prices and trial lengths are US list prices in USD, read from the provider's own page on the date in priceInfo (see docs/PRICING.md). An entry with no priceInfo has no verified price. Prices are shown only for the region and only while recent (CatalogueEntry.localized).",
+  "popular": [
+    "netflix",
+    "spotify",
+    "youtube-premium",
+    "disney-plus",
+    "hulu",
+    "max",
+    "amazon-prime",
+    "apple-music"
+  ],
+  "entries": [
+    {
+      "id": "1password",
+      "name": "1Password",
+      "aliases": [
+        "Password manager"
+      ],
+      "domain": "1password.com",
+      "category": "Work"
+    },
+    {
+      "id": "adobe-creative-cloud",
+      "name": "Creative Cloud",
+      "aliases": [
+        "Adobe",
+        "Photoshop",
+        "Lightroom",
+        "Creative Cloud Pro"
+      ],
+      "domain": "adobe.com",
+      "category": "Work",
+      "cancellationURL": "https://account.adobe.com/plans",
+      "typicalPlans": [
+        {
+          "label": "Photography",
+          "amount": "19.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          },
+          "note": "Annual plan, billed monthly"
+        },
+        {
+          "label": "Single app",
+          "amount": "22.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          },
+          "note": "Annual plan, billed monthly"
+        },
+        {
+          "label": "Standard",
+          "amount": "54.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          },
+          "note": "Annual plan, billed monthly"
+        },
+        {
+          "label": "Pro",
+          "amount": "69.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          },
+          "note": "Regular price. Introductory offers for new subscribers are lower."
+        }
+      ],
+      "priceInfo": {
+        "region": "US",
+        "checkedOn": "2026-10-30",
+        "sourceURL": "https://www.adobe.com/creativecloud/plans.html"
+      }
+    },
+    {
+      "id": "amazon-prime",
+      "name": "Amazon Prime",
+      "aliases": [
+        "Prime",
+        "Prime Video",
+        "Amazon"
+      ],
+      "domain": "amazon.com",
+      "category": "Other",
+      "cancellationURL": "https://www.amazon.com/gp/primecentral",
+      "trialDays": 30,
+      "typicalPlans": [
+        {
+          "label": "Annual",
+          "amount": "139",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "year",
+            "count": 1
+          }
+        },
+        {
+          "label": "Monthly",
+          "amount": "14.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        }
+      ],
+      "priceInfo": {
+        "region": "US",
+        "checkedOn": "2026-10-30",
+        "sourceURL": "https://www.aboutamazon.com/news/retail/amazon-prime-free-trial"
+      }
+    },
+    {
+      "id": "apple-music",
+      "name": "Apple Music",
+      "aliases": [
+        "Apple"
+      ],
+      "domain": "music.apple.com",
+      "category": "Music",
+      "cancellationURL": "https://apps.apple.com/account/subscriptions",
+      "trialDays": 30,
+      "typicalPlans": [
+        {
+          "label": "Student",
+          "amount": "6.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        },
+        {
+          "label": "Individual",
+          "amount": "11.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        },
+        {
+          "label": "Family",
+          "amount": "19.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        }
+      ],
+      "priceInfo": {
+        "region": "US",
+        "checkedOn": "2026-10-30",
+        "sourceURL": "https://www.apple.com/apple-music/"
+      }
+    },
+    {
+      "id": "apple-one",
+      "name": "Apple One",
+      "domain": "apple.com",
+      "category": "Storage",
+      "cancellationURL": "https://apps.apple.com/account/subscriptions"
+    },
+    {
+      "id": "apple-tv-plus",
+      "name": "Apple TV",
+      "aliases": [
+        "Apple TV",
+        "Apple",
+        "Apple TV+"
+      ],
+      "domain": "tv.apple.com",
+      "category": "Streaming",
+      "cancellationURL": "https://apps.apple.com/account/subscriptions",
+      "trialDays": 7,
+      "typicalPlans": [
+        {
+          "label": "Monthly",
+          "amount": "14.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        }
+      ],
+      "priceInfo": {
+        "region": "US",
+        "checkedOn": "2026-10-30",
+        "sourceURL": "https://www.apple.com/apple-tv-plus/"
+      }
+    },
+    {
+      "id": "audible",
+      "name": "Audible",
+      "aliases": [
+        "Audiobooks"
+      ],
+      "domain": "audible.com",
+      "category": "Learning",
+      "cancellationURL": "https://www.audible.com/account/overview",
+      "trialDays": 30,
+      "typicalPlans": [
+        {
+          "label": "Standard",
+          "amount": "8.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        },
+        {
+          "label": "Premium",
+          "amount": "14.95",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        }
+      ],
+      "priceInfo": {
+        "region": "US",
+        "checkedOn": "2026-10-30",
+        "sourceURL": "https://www.audible.com/membership"
+      }
+    },
+    {
+      "id": "calm",
+      "name": "Calm",
+      "aliases": [
+        "Meditation"
+      ],
+      "domain": "calm.com",
+      "category": "Fitness"
+    },
+    {
+      "id": "canva",
+      "name": "Canva",
+      "domain": "canva.com",
+      "category": "Work"
+    },
+    {
+      "id": "chatgpt-plus",
+      "name": "ChatGPT Plus",
+      "aliases": [
+        "ChatGPT",
+        "OpenAI"
+      ],
+      "domain": "chatgpt.com",
+      "category": "Work"
+    },
+    {
+      "id": "classpass",
+      "name": "ClassPass",
+      "domain": "classpass.com",
+      "category": "Fitness"
+    },
+    {
+      "id": "coursera",
+      "name": "Coursera",
+      "aliases": [
+        "Coursera Plus"
+      ],
+      "domain": "coursera.org",
+      "category": "Learning"
+    },
+    {
+      "id": "crunchyroll",
+      "name": "Crunchyroll",
+      "aliases": [
+        "Anime"
+      ],
+      "domain": "crunchyroll.com",
+      "category": "Streaming"
+    },
+    {
+      "id": "deezer",
+      "name": "Deezer",
+      "domain": "deezer.com",
+      "category": "Music"
+    },
+    {
+      "id": "discord-nitro",
+      "name": "Discord Nitro",
+      "aliases": [
+        "Discord"
+      ],
+      "domain": "discord.com",
+      "category": "Other"
+    },
+    {
+      "id": "disney-plus",
+      "name": "Disney+",
+      "aliases": [
+        "Disney Plus"
+      ],
+      "domain": "disneyplus.com",
+      "category": "Streaming",
+      "cancellationURL": "https://www.disneyplus.com/account",
+      "typicalPlans": [
+        {
+          "label": "With ads",
+          "amount": "12.49",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        },
+        {
+          "label": "Premium, annual",
+          "amount": "214.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "year",
+            "count": 1
+          }
+        },
+        {
+          "label": "Premium",
+          "amount": "21.49",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        }
+      ],
+      "priceInfo": {
+        "region": "US",
+        "checkedOn": "2026-10-30",
+        "sourceURL": "https://www.disneyplus.com/welcome"
+      }
+    },
+    {
+      "id": "dropbox",
+      "name": "Dropbox",
+      "domain": "dropbox.com",
+      "category": "Storage",
+      "cancellationURL": "https://www.dropbox.com/account/plan"
+    },
+    {
+      "id": "duolingo",
+      "name": "Duolingo Max",
+      "aliases": [
+        "Duolingo"
+      ],
+      "domain": "duolingo.com",
+      "category": "Learning"
+    },
+    {
+      "id": "economist",
+      "name": "The Economist",
+      "domain": "economist.com",
+      "category": "News"
+    },
+    {
+      "id": "figma",
+      "name": "Figma",
+      "domain": "figma.com",
+      "category": "Work"
+    },
+    {
+      "id": "github",
+      "name": "GitHub",
+      "aliases": [
+        "Copilot",
+        "GitHub Copilot"
+      ],
+      "domain": "github.com",
+      "category": "Work",
+      "cancellationURL": "https://github.com/settings/billing"
+    },
+    {
+      "id": "google-one",
+      "name": "Google One",
+      "aliases": [
+        "Google Drive",
+        "Google Storage",
+        "Gemini"
+      ],
+      "domain": "one.google.com",
+      "category": "Storage",
+      "cancellationURL": "https://one.google.com/settings",
+      "typicalPlans": [
+        {
+          "label": "100 GB",
+          "amount": "1.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        },
+        {
+          "label": "2 TB (Google AI Plus)",
+          "amount": "9.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        },
+        {
+          "label": "5 TB (Google AI Pro)",
+          "amount": "19.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        }
+      ],
+      "priceInfo": {
+        "region": "US",
+        "checkedOn": "2026-10-30",
+        "sourceURL": "https://one.google.com/about/plans"
+      }
+    },
+    {
+      "id": "grammarly",
+      "name": "Grammarly",
+      "domain": "grammarly.com",
+      "category": "Work"
+    },
+    {
+      "id": "headspace",
+      "name": "Headspace",
+      "aliases": [
+        "Meditation"
+      ],
+      "domain": "headspace.com",
+      "category": "Fitness"
+    },
+    {
+      "id": "hulu",
+      "name": "Hulu",
+      "aliases": [
+        "Disney bundle"
+      ],
+      "domain": "hulu.com",
+      "category": "Streaming",
+      "cancellationURL": "https://secure.hulu.com/account",
+      "typicalPlans": [
+        {
+          "label": "With ads, annual",
+          "amount": "124.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "year",
+            "count": 1
+          }
+        },
+        {
+          "label": "With ads",
+          "amount": "12.49",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        },
+        {
+          "label": "Premium (no ads)",
+          "amount": "21.49",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        }
+      ],
+      "priceInfo": {
+        "region": "US",
+        "checkedOn": "2026-10-30",
+        "sourceURL": "https://www.hulu.com/premium-no-ads"
+      }
+    },
+    {
+      "id": "icloud-plus",
+      "name": "iCloud+",
+      "aliases": [
+        "iCloud",
+        "Apple iCloud"
+      ],
+      "domain": "icloud.com",
+      "category": "Storage",
+      "cancellationURL": "https://apps.apple.com/account/subscriptions",
+      "typicalPlans": [
+        {
+          "label": "50 GB",
+          "amount": "0.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        },
+        {
+          "label": "200 GB",
+          "amount": "2.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        },
+        {
+          "label": "2 TB",
+          "amount": "9.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        },
+        {
+          "label": "6 TB",
+          "amount": "29.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        },
+        {
+          "label": "12 TB",
+          "amount": "59.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        }
+      ],
+      "priceInfo": {
+        "region": "US",
+        "checkedOn": "2026-10-30",
+        "sourceURL": "https://support.apple.com/en-us/108047"
+      }
+    },
+    {
+      "id": "kindle-unlimited",
+      "name": "Kindle Unlimited",
+      "aliases": [
+        "Kindle"
+      ],
+      "domain": "amazon.com",
+      "category": "Learning"
+    },
+    {
+      "id": "linkedin-premium",
+      "name": "LinkedIn Premium",
+      "aliases": [
+        "LinkedIn"
+      ],
+      "domain": "linkedin.com",
+      "category": "Work"
+    },
+    {
+      "id": "masterclass",
+      "name": "MasterClass",
+      "domain": "masterclass.com",
+      "category": "Learning"
+    },
+    {
+      "id": "max",
+      "name": "HBO Max",
+      "aliases": [
+        "HBO",
+        "HBO Max",
+        "Max"
+      ],
+      "domain": "hbomax.com",
+      "category": "Streaming",
+      "typicalPlans": [
+        {
+          "label": "Basic with ads, annual",
+          "amount": "109.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "year",
+            "count": 1
+          }
+        },
+        {
+          "label": "Basic with ads",
+          "amount": "10.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        },
+        {
+          "label": "Standard, annual",
+          "amount": "184.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "year",
+            "count": 1
+          }
+        },
+        {
+          "label": "Standard",
+          "amount": "18.49",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        },
+        {
+          "label": "Premium, annual",
+          "amount": "229.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "year",
+            "count": 1
+          }
+        },
+        {
+          "label": "Premium",
+          "amount": "22.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        }
+      ],
+      "priceInfo": {
+        "region": "US",
+        "checkedOn": "2026-10-30",
+        "sourceURL": "https://help.hbomax.com/plans"
+      }
+    },
+    {
+      "id": "medium",
+      "name": "Medium",
+      "domain": "medium.com",
+      "category": "News"
+    },
+    {
+      "id": "microsoft-365",
+      "name": "Microsoft 365",
+      "aliases": [
+        "Office",
+        "Office 365",
+        "Word",
+        "Excel"
+      ],
+      "domain": "microsoft.com",
+      "category": "Work",
+      "cancellationURL": "https://account.microsoft.com/services"
+    },
+    {
+      "id": "netflix",
+      "name": "Netflix",
+      "domain": "netflix.com",
+      "category": "Streaming",
+      "cancellationURL": "https://www.netflix.com/cancelplan",
+      "typicalPlans": [
+        {
+          "label": "Standard with ads",
+          "amount": "8.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        },
+        {
+          "label": "Standard",
+          "amount": "19.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        },
+        {
+          "label": "Premium",
+          "amount": "26.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        }
+      ],
+      "priceInfo": {
+        "region": "US",
+        "checkedOn": "2026-10-30",
+        "sourceURL": "https://help.netflix.com/en/node/24926"
+      }
+    },
+    {
+      "id": "nintendo-switch-online",
+      "name": "Nintendo Switch Online",
+      "aliases": [
+        "Switch Online"
+      ],
+      "domain": "nintendo.com",
+      "category": "Gaming"
+    },
+    {
+      "id": "nordvpn",
+      "name": "NordVPN",
+      "aliases": [
+        "VPN"
+      ],
+      "domain": "nordvpn.com",
+      "category": "Other"
+    },
+    {
+      "id": "notion",
+      "name": "Notion",
+      "domain": "notion.so",
+      "category": "Work"
+    },
+    {
+      "id": "nyt",
+      "name": "The New York Times",
+      "aliases": [
+        "NYT",
+        "NY Times",
+        "New York Times"
+      ],
+      "domain": "nytimes.com",
+      "category": "News",
+      "cancellationURL": "https://myaccount.nytimes.com/seg/subscription"
+    },
+    {
+      "id": "paramount-plus",
+      "name": "Paramount+",
+      "aliases": [
+        "Paramount"
+      ],
+      "domain": "paramountplus.com",
+      "category": "Streaming",
+      "cancellationURL": "https://www.paramountplus.com/account/",
+      "typicalPlans": [
+        {
+          "label": "Essential",
+          "amount": "8.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        },
+        {
+          "label": "Premium",
+          "amount": "13.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        }
+      ],
+      "priceInfo": {
+        "region": "US",
+        "checkedOn": "2026-10-30",
+        "sourceURL": "https://www.paramountplus.com/"
+      }
+    },
+    {
+      "id": "patreon",
+      "name": "Patreon",
+      "domain": "patreon.com",
+      "category": "Other"
+    },
+    {
+      "id": "peacock",
+      "name": "Peacock",
+      "domain": "peacocktv.com",
+      "category": "Streaming"
+    },
+    {
+      "id": "peloton",
+      "name": "Peloton",
+      "aliases": [
+        "Peloton App"
+      ],
+      "domain": "onepeloton.com",
+      "category": "Fitness"
+    },
+    {
+      "id": "playstation-plus",
+      "name": "PlayStation Plus",
+      "aliases": [
+        "PS Plus",
+        "PSN",
+        "Sony"
+      ],
+      "domain": "playstation.com",
+      "category": "Gaming",
+      "typicalPlans": [
+        {
+          "label": "Essential",
+          "amount": "10.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        },
+        {
+          "label": "Extra",
+          "amount": "16.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        },
+        {
+          "label": "Premium",
+          "amount": "19.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        }
+      ],
+      "priceInfo": {
+        "region": "US",
+        "checkedOn": "2026-10-30",
+        "sourceURL": "https://www.playstation.com/en-us/ps-plus/"
+      }
+    },
+    {
+      "id": "proton",
+      "name": "Proton",
+      "aliases": [
+        "ProtonMail",
+        "Proton VPN"
+      ],
+      "domain": "proton.me",
+      "category": "Other"
+    },
+    {
+      "id": "skillshare",
+      "name": "Skillshare",
+      "domain": "skillshare.com",
+      "category": "Learning"
+    },
+    {
+      "id": "slack",
+      "name": "Slack",
+      "domain": "slack.com",
+      "category": "Work"
+    },
+    {
+      "id": "spotify",
+      "name": "Spotify",
+      "domain": "spotify.com",
+      "category": "Music",
+      "cancellationURL": "https://www.spotify.com/account/subscription/",
+      "typicalPlans": [
+        {
+          "label": "Student",
+          "amount": "6.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        },
+        {
+          "label": "Individual",
+          "amount": "12.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        },
+        {
+          "label": "Duo",
+          "amount": "18.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        },
+        {
+          "label": "Family",
+          "amount": "21.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        }
+      ],
+      "priceInfo": {
+        "region": "US",
+        "checkedOn": "2026-10-30",
+        "sourceURL": "https://www.spotify.com/us/premium/"
+      }
+    },
+    {
+      "id": "strava",
+      "name": "Strava",
+      "domain": "strava.com",
+      "category": "Fitness",
+      "trialDays": 30,
+      "typicalPlans": [
+        {
+          "label": "Annual",
+          "amount": "79.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "year",
+            "count": 1
+          }
+        },
+        {
+          "label": "Monthly",
+          "amount": "11.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        }
+      ],
+      "priceInfo": {
+        "region": "US",
+        "checkedOn": "2026-10-30",
+        "sourceURL": "https://www.strava.com/pricing"
+      }
+    },
+    {
+      "id": "tidal",
+      "name": "Tidal",
+      "domain": "tidal.com",
+      "category": "Music"
+    },
+    {
+      "id": "todoist",
+      "name": "Todoist",
+      "domain": "todoist.com",
+      "category": "Work"
+    },
+    {
+      "id": "washington-post",
+      "name": "The Washington Post",
+      "aliases": [
+        "WaPo"
+      ],
+      "domain": "washingtonpost.com",
+      "category": "News"
+    },
+    {
+      "id": "wsj",
+      "name": "The Wall Street Journal",
+      "aliases": [
+        "WSJ"
+      ],
+      "domain": "wsj.com",
+      "category": "News"
+    },
+    {
+      "id": "xbox-game-pass",
+      "name": "Game Pass",
+      "aliases": [
+        "Xbox Game Pass",
+        "Xbox"
+      ],
+      "domain": "xbox.com",
+      "category": "Gaming",
+      "cancellationURL": "https://account.microsoft.com/services",
+      "typicalPlans": [
+        {
+          "label": "PC Game Pass",
+          "amount": "13.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          },
+          "note": "New members: $1 for the first 14 days"
+        },
+        {
+          "label": "Premium",
+          "amount": "14.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          },
+          "note": "New members: $1 for the first 14 days"
+        },
+        {
+          "label": "Ultimate",
+          "amount": "22.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          },
+          "note": "New members: $1 for the first 14 days"
+        }
+      ],
+      "priceInfo": {
+        "region": "US",
+        "checkedOn": "2026-10-30",
+        "sourceURL": "https://www.xbox.com/en-us/games/store/xbox-game-pass-ultimate/cfq7ttc0khs0"
+      }
+    },
+    {
+      "id": "youtube-premium",
+      "name": "YouTube Premium",
+      "aliases": [
+        "YouTube",
+        "YT Music"
+      ],
+      "domain": "youtube.com",
+      "category": "Streaming",
+      "cancellationURL": "https://www.youtube.com/paid_memberships"
+    },
+    {
+      "id": "zoom",
+      "name": "Zoom",
+      "domain": "zoom.us",
+      "category": "Work"
+    }
+  ]
 }

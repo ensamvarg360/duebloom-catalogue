@@ -1,0 +1,35 @@
+{
+  "id": "paramount-plus",
+  "name": "Paramount+",
+  "aliases": [
+    "Paramount"
+  ],
+  "domain": "paramountplus.com",
+  "category": "Streaming",
+  "cancellationURL": "https://www.paramountplus.com/account/",
+  "typicalPlans": [
+    {
+      "label": "Essential",
+      "amount": "8.99",
+      "currencyCode": "USD",
+      "interval": {
+        "unit": "month",
+        "count": 1
+      }
+    },
+    {
+      "label": "Premium",
+      "amount": "13.99",
+      "currencyCode": "USD",
+      "interval": {
+        "unit": "month",
+        "count": 1
+      }
+    }
+  ],
+  "priceInfo": {
+    "region": "US",
+    "checkedOn": "2026-10-30",
+    "sourceURL": "https://www.paramountplus.com/"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "id": "apple-one",
+  "name": "Apple One",
+  "domain": "apple.com",
+  "category": "Storage",
+  "cancellationURL": "https://apps.apple.com/account/subscriptions"
+}

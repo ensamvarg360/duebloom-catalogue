@@ -1,0 +1,7 @@
+{
+  "id": "dropbox",
+  "name": "Dropbox",
+  "domain": "dropbox.com",
+  "category": "Storage",
+  "cancellationURL": "https://www.dropbox.com/account/plan"
+}

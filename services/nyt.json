@@ -1,0 +1,12 @@
+{
+  "id": "nyt",
+  "name": "The New York Times",
+  "aliases": [
+    "NYT",
+    "NY Times",
+    "New York Times"
+  ],
+  "domain": "nytimes.com",
+  "category": "News",
+  "cancellationURL": "https://myaccount.nytimes.com/seg/subscription"
+}

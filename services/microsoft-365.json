@@ -1,0 +1,13 @@
+{
+  "id": "microsoft-365",
+  "name": "Microsoft 365",
+  "aliases": [
+    "Office",
+    "Office 365",
+    "Word",
+    "Excel"
+  ],
+  "domain": "microsoft.com",
+  "category": "Work",
+  "cancellationURL": "https://account.microsoft.com/services"
+}

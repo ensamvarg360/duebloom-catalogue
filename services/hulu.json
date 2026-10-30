@@ -1,0 +1,44 @@
+{
+  "id": "hulu",
+  "name": "Hulu",
+  "aliases": [
+    "Disney bundle"
+  ],
+  "domain": "hulu.com",
+  "category": "Streaming",
+  "cancellationURL": "https://secure.hulu.com/account",
+  "typicalPlans": [
+    {
+      "label": "With ads, annual",
+      "amount": "124.99",
+      "currencyCode": "USD",
+      "interval": {
+        "unit": "year",
+        "count": 1
+      }
+    },
+    {
+      "label": "With ads",
+      "amount": "12.49",
+      "currencyCode": "USD",
+      "interval": {
+        "unit": "month",
+        "count": 1
+      }
+    },
+    {
+      "label": "Premium (no ads)",
+      "amount": "21.49",
+      "currencyCode": "USD",
+      "interval": {
+        "unit": "month",
+        "count": 1
+      }
+    }
+  ],
+  "priceInfo": {
+    "region": "US",
+    "checkedOn": "2026-10-30",
+    "sourceURL": "https://www.hulu.com/premium-no-ads"
+  }
+}

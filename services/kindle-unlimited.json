@@ -1,0 +1,9 @@
+{
+  "id": "kindle-unlimited",
+  "name": "Kindle Unlimited",
+  "aliases": [
+    "Kindle"
+  ],
+  "domain": "amazon.com",
+  "category": "Learning"
+}

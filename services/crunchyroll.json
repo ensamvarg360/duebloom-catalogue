@@ -1,0 +1,9 @@
+{
+  "id": "crunchyroll",
+  "name": "Crunchyroll",
+  "aliases": [
+    "Anime"
+  ],
+  "domain": "crunchyroll.com",
+  "category": "Streaming"
+}

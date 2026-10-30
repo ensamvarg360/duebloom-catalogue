@@ -1,0 +1,72 @@
+{
+  "id": "max",
+  "name": "HBO Max",
+  "aliases": [
+    "HBO",
+    "HBO Max",
+    "Max"
+  ],
+  "domain": "hbomax.com",
+  "category": "Streaming",
+  "typicalPlans": [
+    {
+      "label": "Basic with ads, annual",
+      "amount": "109.99",
+      "currencyCode": "USD",
+      "interval": {
+        "unit": "year",
+        "count": 1
+      }
+    },
+    {
+      "label": "Basic with ads",
+      "amount": "10.99",
+      "currencyCode": "USD",
+      "interval": {
+        "unit": "month",
+        "count": 1
+      }
+    },
+    {
+      "label": "Standard, annual",
+      "amount": "184.99",
+      "currencyCode": "USD",
+      "interval": {
+        "unit": "year",
+        "count": 1
+      }
+    },
+    {
+      "label": "Standard",
+      "amount": "18.49",
+      "currencyCode": "USD",
+      "interval": {
+        "unit": "month",
+        "count": 1
+      }
+    },
+    {
+      "label": "Premium, annual",
+      "amount": "229.99",
+      "currencyCode": "USD",
+      "interval": {
+        "unit": "year",
+        "count": 1
+      }
+    },
+    {
+      "label": "Premium",
+      "amount": "22.99",
+      "currencyCode": "USD",
+      "interval": {
+        "unit": "month",
+        "count": 1
+      }
+    }
+  ],
+  "priceInfo": {
+    "region": "US",
+    "checkedOn": "2026-10-30",
+    "sourceURL": "https://help.hbomax.com/plans"
+  }
+}

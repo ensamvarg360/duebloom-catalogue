@@ -1,0 +1,45 @@
+{
+  "id": "apple-music",
+  "name": "Apple Music",
+  "aliases": [
+    "Apple"
+  ],
+  "domain": "music.apple.com",
+  "category": "Music",
+  "cancellationURL": "https://apps.apple.com/account/subscriptions",
+  "trialDays": 30,
+  "typicalPlans": [
+    {
+      "label": "Student",
+      "amount": "6.99",
+      "currencyCode": "USD",
+      "interval": {
+        "unit": "month",
+        "count": 1
+      }
+    },
+    {
+      "label": "Individual",
+      "amount": "11.99",
+      "currencyCode": "USD",
+      "interval": {
+        "unit": "month",
+        "count": 1
+      }
+    },
+    {
+      "label": "Family",
+      "amount": "19.99",
+      "currencyCode": "USD",
+      "interval": {
+        "unit": "month",
+        "count": 1
+      }
+    }
+  ],
+  "priceInfo": {
+    "region": "US",
+    "checkedOn": "2026-10-30",
+    "sourceURL": "https://www.apple.com/apple-music/"
+  }
+}

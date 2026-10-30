@@ -1,0 +1,60 @@
+{
+  "id": "adobe-creative-cloud",
+  "name": "Creative Cloud",
+  "aliases": [
+    "Adobe",
+    "Photoshop",
+    "Lightroom",
+    "Creative Cloud Pro"
+  ],
+  "domain": "adobe.com",
+  "category": "Work",
+  "cancellationURL": "https://account.adobe.com/plans",
+  "typicalPlans": [
+    {
+      "label": "Photography",
+      "amount": "19.99",
+      "currencyCode": "USD",
+      "interval": {
+        "unit": "month",
+        "count": 1
+      },
+      "note": "Annual plan, billed monthly"
+    },
+    {
+      "label": "Single app",
+      "amount": "22.99",
+      "currencyCode": "USD",
+      "interval": {
+        "unit": "month",
+        "count": 1
+      },
+      "note": "Annual plan, billed monthly"
+    },
+    {
+      "label": "Standard",
+      "amount": "54.99",
+      "currencyCode": "USD",
+      "interval": {
+        "unit": "month",
+        "count": 1
+      },
+      "note": "Annual plan, billed monthly"
+    },
+    {
+      "label": "Pro",
+      "amount": "69.99",
+      "currencyCode": "USD",
+      "interval": {
+        "unit": "month",
+        "count": 1
+      },
+      "note": "Regular price. Introductory offers for new subscribers are lower."
+    }
+  ],
+  "priceInfo": {
+    "region": "US",
+    "checkedOn": "2026-10-30",
+    "sourceURL": "https://www.adobe.com/creativecloud/plans.html"
+  }
+}

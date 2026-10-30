@@ -1,0 +1,10 @@
+{
+  "id": "chatgpt-plus",
+  "name": "ChatGPT Plus",
+  "aliases": [
+    "ChatGPT",
+    "OpenAI"
+  ],
+  "domain": "chatgpt.com",
+  "category": "Work"
+}

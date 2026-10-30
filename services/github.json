@@ -1,0 +1,11 @@
+{
+  "id": "github",
+  "name": "GitHub",
+  "aliases": [
+    "Copilot",
+    "GitHub Copilot"
+  ],
+  "domain": "github.com",
+  "category": "Work",
+  "cancellationURL": "https://github.com/settings/billing"
+}

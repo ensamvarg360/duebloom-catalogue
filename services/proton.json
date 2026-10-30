@@ -1,0 +1,10 @@
+{
+  "id": "proton",
+  "name": "Proton",
+  "aliases": [
+    "ProtonMail",
+    "Proton VPN"
+  ],
+  "domain": "proton.me",
+  "category": "Other"
+}
