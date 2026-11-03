@@ -9,38 +9,40 @@
   "domain": "one.google.com",
   "category": "Storage",
   "cancellationURL": "https://one.google.com/settings",
-  "typicalPlans": [
+  "prices": [
     {
-      "label": "100 GB",
-      "amount": "1.99",
-      "currencyCode": "USD",
-      "interval": {
-        "unit": "month",
-        "count": 1
-      }
-    },
-    {
-      "label": "2 TB (Google AI Plus)",
-      "amount": "9.99",
-      "currencyCode": "USD",
-      "interval": {
-        "unit": "month",
-        "count": 1
-      }
-    },
-    {
-      "label": "5 TB (Google AI Pro)",
-      "amount": "19.99",
-      "currencyCode": "USD",
-      "interval": {
-        "unit": "month",
-        "count": 1
-      }
+      "region": "US",
+      "checkedOn": "2026-10-30",
+      "sourceURL": "https://one.google.com/about/plans",
+      "plans": [
+        {
+          "label": "100 GB",
+          "amount": "1.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        },
+        {
+          "label": "2 TB (Google AI Plus)",
+          "amount": "9.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        },
+        {
+          "label": "5 TB (Google AI Pro)",
+          "amount": "19.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        }
+      ]
     }
-  ],
-  "priceInfo": {
-    "region": "US",
-    "checkedOn": "2026-10-30",
-    "sourceURL": "https://one.google.com/about/plans"
-  }
+  ]
 }

@@ -9,21 +9,23 @@
   "domain": "tv.apple.com",
   "category": "Streaming",
   "cancellationURL": "https://apps.apple.com/account/subscriptions",
-  "trialDays": 7,
-  "typicalPlans": [
+  "prices": [
     {
-      "label": "Monthly",
-      "amount": "14.99",
-      "currencyCode": "USD",
-      "interval": {
-        "unit": "month",
-        "count": 1
-      }
+      "region": "US",
+      "checkedOn": "2026-10-30",
+      "sourceURL": "https://www.apple.com/apple-tv-plus/",
+      "trialDays": 7,
+      "plans": [
+        {
+          "label": "Monthly",
+          "amount": "14.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        }
+      ]
     }
-  ],
-  "priceInfo": {
-    "region": "US",
-    "checkedOn": "2026-10-30",
-    "sourceURL": "https://www.apple.com/apple-tv-plus/"
-  }
+  ]
 }

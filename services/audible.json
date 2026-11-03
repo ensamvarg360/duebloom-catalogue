@@ -7,30 +7,32 @@
   "domain": "audible.com",
   "category": "Learning",
   "cancellationURL": "https://www.audible.com/account/overview",
-  "trialDays": 30,
-  "typicalPlans": [
+  "prices": [
     {
-      "label": "Standard",
-      "amount": "8.99",
-      "currencyCode": "USD",
-      "interval": {
-        "unit": "month",
-        "count": 1
-      }
-    },
-    {
-      "label": "Premium",
-      "amount": "14.95",
-      "currencyCode": "USD",
-      "interval": {
-        "unit": "month",
-        "count": 1
-      }
+      "region": "US",
+      "checkedOn": "2026-10-30",
+      "sourceURL": "https://www.audible.com/membership",
+      "trialDays": 30,
+      "plans": [
+        {
+          "label": "Standard",
+          "amount": "8.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        },
+        {
+          "label": "Premium",
+          "amount": "14.95",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        }
+      ]
     }
-  ],
-  "priceInfo": {
-    "region": "US",
-    "checkedOn": "2026-10-30",
-    "sourceURL": "https://www.audible.com/membership"
-  }
+  ]
 }

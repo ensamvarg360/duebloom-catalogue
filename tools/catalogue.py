@@ -2,7 +2,9 @@
 """Validate and build the Duebloom service catalogue.
 
 One file per service in services/<id>.json. `build` merges them with
-catalogue.config.json into docs/catalogue.json, which GitHub Pages serves.
+catalogue.config.json into docs/v3/catalogue.json (format 3, prices per
+region), and also writes docs/catalogue.json in format 2 for app builds that
+predate format 3: US prices only, no regional links. GitHub Pages serves both.
 
     python3 tools/catalogue.py new <id>     create services/<id>.json from a template
     python3 tools/catalogue.py check        validate every service file
@@ -23,9 +25,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SERVICES = ROOT / "services"
 CONFIG = ROOT / "catalogue.config.json"
-OUTPUT = ROOT / "docs" / "catalogue.json"
+OUTPUT = ROOT / "docs" / "v3" / "catalogue.json"
+OUTPUT_V2 = ROOT / "docs" / "catalogue.json"
 
 SLUG = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
+REGION = re.compile(r"^[A-Z]{2}$")
 DOMAIN = re.compile(r"^[a-z0-9-]+(\.[a-z0-9-]+)+$")
 UNITS = {"day", "week", "month", "year"}
 # Same list as the app's CatalogueTests; the add screen's category chips use these.
@@ -34,8 +38,17 @@ CATEGORIES = {"Streaming", "Music", "Work", "Learning", "Fitness", "Storage", "N
 STALE_DAYS = 180
 
 # Key order in the built file, so diffs stay readable.
-ENTRY_KEYS = ["id", "name", "aliases", "domain", "category", "cancellationURL",
-              "trialDays", "typicalPlans", "priceInfo"]
+ENTRY_KEYS = ["id", "name", "aliases", "domain", "category", "cancellationURL", "regional", "prices"]
+PRICE_KEYS = ["region", "checkedOn", "sourceURL", "trialDays", "plans"]
+REGIONAL_KEYS = ["domain", "cancellationURL"]
+
+# Format 2 has one price list per entry. Older apps show it only in this region.
+V2_REGION = "US"
+V2_NOTE = ("Plans, prices and trial lengths are US list prices in USD, read from the provider's own page "
+           "on the date in priceInfo (see docs/PRICING.md). An entry with no priceInfo has no verified price. "
+           "Prices are shown only for the region and only while recent (CatalogueEntry.localized).")
+V2_ENTRY_KEYS = ["id", "name", "aliases", "domain", "category", "cancellationURL",
+                 "trialDays", "typicalPlans", "priceInfo"]
 
 
 def load_config():
@@ -68,14 +81,66 @@ def check_entry(stem, e, today, errors, warnings):
         errors.append(f"{where}: aliases must be a list")
     if "cancellationURL" in e:
         check_url(e["cancellationURL"], f"{where} cancellationURL", errors)
-    if "trialDays" in e and not (isinstance(e["trialDays"], int) and e["trialDays"] > 0):
-        errors.append(f"{where}: trialDays must be a positive whole number")
     unknown = set(e) - set(ENTRY_KEYS)
     if unknown:
         errors.append(f"{where}: unknown keys {sorted(unknown)}")
 
-    for i, plan in enumerate(e.get("typicalPlans", [])):
-        pw = f"{where} typicalPlans[{i}]"
+    regional = e.get("regional", {})
+    if not isinstance(regional, dict):
+        errors.append(f"{where}: regional must map a region such as GB to its links")
+        regional = {}
+    for region, links in regional.items():
+        rw = f"{where} regional.{region}"
+        if not REGION.match(region):
+            errors.append(f"{rw}: region must be ISO 3166 such as GB")
+        if not isinstance(links, dict) or not links or set(links) - set(REGIONAL_KEYS):
+            errors.append(f"{rw}: needs domain and/or cancellationURL, nothing else")
+            continue
+        if "domain" in links and not DOMAIN.match(str(links["domain"])):
+            errors.append(f"{rw}: domain must be a bare domain such as amazon.co.uk")
+        if "cancellationURL" in links:
+            check_url(links["cancellationURL"], f"{rw} cancellationURL", errors)
+
+    prices = e.get("prices", [])
+    if not isinstance(prices, list):
+        errors.append(f"{where}: prices must be a list")
+        prices = []
+    regions = [p.get("region") for p in prices]
+    if len(set(regions)) != len(regions):
+        errors.append(f"{where}: one prices block per region")
+    for i, block in enumerate(prices):
+        check_prices(block, f"{where} prices[{i}]", today, errors, warnings)
+
+
+def check_prices(block, where, today, errors, warnings):
+    unknown = set(block) - set(PRICE_KEYS)
+    if unknown:
+        errors.append(f"{where}: unknown keys {sorted(unknown)}")
+    if not REGION.match(str(block.get("region", ""))):
+        errors.append(f"{where}: region must be ISO 3166 such as US")
+    check_url(block.get("sourceURL"), f"{where} sourceURL", errors)
+    try:
+        checked = datetime.date.fromisoformat(block.get("checkedOn", ""))
+        age = (today - checked).days
+        if age < 0:
+            errors.append(f"{where}: checkedOn is in the future")
+        elif age > STALE_DAYS:
+            warnings.append(f"{where}: prices checked {age} days ago, re-check them")
+    except (TypeError, ValueError):
+        errors.append(f"{where}: checkedOn must be YYYY-MM-DD")
+    if "trialDays" in block and not (isinstance(block["trialDays"], int) and block["trialDays"] > 0):
+        errors.append(f"{where}: trialDays must be a positive whole number")
+    plans = block.get("plans")
+    if not isinstance(plans, list) or not plans:
+        # A trial without plans can't show on the plan screen (DECISIONS #51).
+        errors.append(f"{where}: plans is required and can't be empty")
+        plans = []
+    currencies = {plan.get("currencyCode") for plan in plans}
+    if len(currencies) > 1:
+        errors.append(f"{where}: one currency per region")
+
+    for i, plan in enumerate(plans):
+        pw = f"{where} plans[{i}]"
         if not plan.get("label"):
             errors.append(f"{pw}: label is required")
         try:
@@ -89,23 +154,6 @@ def check_entry(stem, e, today, errors, warnings):
         if interval.get("unit") not in UNITS or not (isinstance(interval.get("count"), int) and interval["count"] >= 1):
             errors.append(f"{pw}: interval needs unit (day/week/month/year) and count >= 1")
 
-    info = e.get("priceInfo")
-    if (e.get("typicalPlans") or "trialDays" in e) and info is None:
-        errors.append(f"{where}: priceInfo is required when typicalPlans or trialDays is set")
-    if info is not None:
-        if not re.match(r"^[A-Z]{2}$", str(info.get("region", ""))):
-            errors.append(f"{where} priceInfo: region must be ISO 3166 such as US")
-        check_url(info.get("sourceURL"), f"{where} priceInfo sourceURL", errors)
-        try:
-            checked = datetime.date.fromisoformat(info.get("checkedOn", ""))
-            age = (today - checked).days
-            if age < 0:
-                errors.append(f"{where} priceInfo: checkedOn is in the future")
-            elif age > STALE_DAYS:
-                warnings.append(f"{where}: prices checked {age} days ago, re-check them")
-        except (TypeError, ValueError):
-            errors.append(f"{where} priceInfo: checkedOn must be YYYY-MM-DD")
-
 
 def validate():
     today = datetime.date.today()
@@ -114,9 +162,16 @@ def validate():
     services = load_services()
     for stem, (_, entry) in services.items():
         check_entry(stem, entry, today, errors, warnings)
-    for pid in config.get("popular", []):
-        if pid not in services:
-            errors.append(f"catalogue.config.json: popular id '{pid}' has no service file")
+    popular = config.get("popular", {})
+    if not isinstance(popular, dict) or not popular.get("default"):
+        errors.append('catalogue.config.json: popular must map "default" and regions such as GB to lists of ids')
+        popular = {}
+    for region, ids in popular.items():
+        if region != "default" and not REGION.match(region):
+            errors.append(f"catalogue.config.json: popular key '{region}' must be default or ISO 3166")
+        for pid in ids:
+            if pid not in services:
+                errors.append(f"catalogue.config.json: popular.{region} id '{pid}' has no service file")
     for w in warnings:
         print(f"warning: {w}")
     for e in errors:
@@ -127,21 +182,52 @@ def validate():
     return config, services
 
 
-def build():
-    config, services = validate()
-    entries = [{k: e[k] for k in ENTRY_KEYS if k in e} for _, e in services.values()]
-    out = {"version": config["version"], "revision": 0, "note": config["note"],
-           "popular": config.get("popular", []), "entries": entries}
-    # The app takes a download only if its revision is higher than what it has,
-    # so bump it (UTC yyyymmddHHMM) when the content changes and keep it otherwise.
-    previous = json.loads(OUTPUT.read_text()) if OUTPUT.exists() else {}
+def ordered(d, keys):
+    return {k: d[k] for k in keys if k in d}
+
+
+def v2_entry(e):
+    """The entry as format 2: its US prices flattened, regional links dropped."""
+    flat = {k: e[k] for k in ("id", "name", "aliases", "domain", "category", "cancellationURL") if k in e}
+    us = next((p for p in e.get("prices", []) if p["region"] == V2_REGION), None)
+    if us:
+        if "trialDays" in us:
+            flat["trialDays"] = us["trialDays"]
+        flat["typicalPlans"] = us["plans"]
+        flat["priceInfo"] = {k: us[k] for k in ("region", "checkedOn", "sourceURL")}
+    return ordered(flat, V2_ENTRY_KEYS)
+
+
+def write(path, out):
+    """Writes `out`, keeping the previous revision if nothing else changed.
+
+    The app takes a download only if its revision is higher than what it has,
+    so bump it (UTC yyyymmddHHMM) when the content changes and keep it otherwise.
+    """
+    previous = json.loads(path.read_text()) if path.exists() else {}
     unchanged = {k: v for k, v in previous.items() if k != "revision"} == {k: v for k, v in out.items() if k != "revision"}
     if unchanged and previous.get("revision"):
         out["revision"] = previous["revision"]
     else:
         out["revision"] = int(datetime.datetime.now(datetime.timezone.utc).strftime("%Y%m%d%H%M"))
-    OUTPUT.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n")
-    print(f"wrote {OUTPUT.relative_to(ROOT)} (revision {out['revision']}{', unchanged' if unchanged else ''})")
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n")
+    print(f"wrote {path.relative_to(ROOT)} (revision {out['revision']}{', unchanged' if unchanged else ''})")
+
+
+def build():
+    config, services = validate()
+    entries = []
+    for _, e in services.values():
+        entry = ordered(e, ENTRY_KEYS)
+        if "prices" in entry:
+            entry["prices"] = [ordered(p, PRICE_KEYS) for p in entry["prices"]]
+        entries.append(entry)
+    popular = config["popular"]
+    write(OUTPUT, {"version": 3, "revision": 0, "note": config["note"], "popular": popular, "entries": entries})
+    write(OUTPUT_V2, {"version": 2, "revision": 0, "note": V2_NOTE,
+                      "popular": popular.get(V2_REGION, popular["default"]),
+                      "entries": [v2_entry(e) for e in entries]})
 
 
 def new(service_id):
@@ -157,35 +243,38 @@ def new(service_id):
         "domain": "",
         "category": "",
         "cancellationURL": "https://",
-        "typicalPlans": [{"label": "", "amount": "0.00", "currencyCode": "USD",
-                          "interval": {"unit": "month", "count": 1}}],
-        "priceInfo": {"region": "US", "checkedOn": datetime.date.today().isoformat(),
-                      "sourceURL": "https://"},
+        "prices": [{"region": "US", "checkedOn": datetime.date.today().isoformat(), "sourceURL": "https://",
+                    "plans": [{"label": "", "amount": "0.00", "currencyCode": "USD",
+                               "interval": {"unit": "month", "count": 1}}]}],
     }
     path.write_text(json.dumps(template, indent=2) + "\n")
-    print(f"created {path.relative_to(ROOT)}; remove typicalPlans and priceInfo if you have no prices")
+    print(f"created {path.relative_to(ROOT)}; remove prices if you have none")
 
 
 def links():
     failed = 0
     for stem, (_, e) in load_services().items():
-        url = e.get("cancellationURL")
-        if not url:
-            continue
-        req = urllib.request.Request(url, method="GET", headers={"User-Agent": "Mozilla/5.0"})
-        try:
-            with urllib.request.urlopen(req, timeout=15) as r:
-                status = r.status
-        except urllib.error.HTTPError as err:
-            status = err.code
-        except Exception as err:  # noqa: BLE001 - report and move on
-            status = type(err).__name__
-        # 401/403 usually means a login wall or bot block, not a dead link.
-        flag = "ok " if status in (200, 401, 403) else "BAD"
-        failed += flag == "BAD"
-        print(f"{flag} {status} {stem}: {url}")
+        urls = [e.get("cancellationURL")] + [links.get("cancellationURL") for links in e.get("regional", {}).values()]
+        for url in filter(None, urls):
+            failed += check_link(stem, url)
     if failed:
         sys.exit(f"{failed} link(s) to look at by hand")
+
+
+def check_link(stem, url):
+    """Prints one link's status. Returns 1 if it needs a look by hand."""
+    req = urllib.request.Request(url, method="GET", headers={"User-Agent": "Mozilla/5.0"})
+    try:
+        with urllib.request.urlopen(req, timeout=15) as r:
+            status = r.status
+    except urllib.error.HTTPError as err:
+        status = err.code
+    except Exception as err:  # noqa: BLE001 - report and move on
+        status = type(err).__name__
+    # 401/403 usually means a login wall or bot block, not a dead link.
+    flag = "ok " if status in (200, 401, 403) else "BAD"
+    print(f"{flag} {status} {stem}: {url}")
+    return int(flag == "BAD")
 
 
 if __name__ == "__main__":

@@ -9,30 +9,32 @@
   "domain": "amazon.com",
   "category": "Other",
   "cancellationURL": "https://www.amazon.com/gp/primecentral",
-  "trialDays": 30,
-  "typicalPlans": [
+  "prices": [
     {
-      "label": "Annual",
-      "amount": "139",
-      "currencyCode": "USD",
-      "interval": {
-        "unit": "year",
-        "count": 1
-      }
-    },
-    {
-      "label": "Monthly",
-      "amount": "14.99",
-      "currencyCode": "USD",
-      "interval": {
-        "unit": "month",
-        "count": 1
-      }
+      "region": "US",
+      "checkedOn": "2026-10-30",
+      "sourceURL": "https://www.aboutamazon.com/news/retail/amazon-prime-free-trial",
+      "trialDays": 30,
+      "plans": [
+        {
+          "label": "Annual",
+          "amount": "139",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "year",
+            "count": 1
+          }
+        },
+        {
+          "label": "Monthly",
+          "amount": "14.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        }
+      ]
     }
-  ],
-  "priceInfo": {
-    "region": "US",
-    "checkedOn": "2026-10-30",
-    "sourceURL": "https://www.aboutamazon.com/news/retail/amazon-prime-free-trial"
-  }
+  ]
 }

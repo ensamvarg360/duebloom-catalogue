@@ -1,14 +1,24 @@
 {
-  "version": 2,
-  "note": "Plans, prices and trial lengths are US list prices in USD, read from the provider's own page on the date in priceInfo (see docs/PRICING.md). An entry with no priceInfo has no verified price. Prices are shown only for the region and only while recent (CatalogueEntry.localized).",
-  "popular": [
-    "netflix",
-    "spotify",
-    "youtube-premium",
-    "disney-plus",
-    "hulu",
-    "max",
-    "amazon-prime",
-    "apple-music"
-  ]
+  "note": "Plans, prices and trial lengths are list prices read from the provider's own page on the date in each prices block (see docs/PRICING.md in the app repo). An entry with no prices block for a region has no verified price there. Prices are shown only in their region and only while recent (CatalogueEntry.localized). regional replaces the website or cancellation link in one region. popular is the list shown before anything is typed, per region, else default.",
+  "popular": {
+    "default": [
+      "netflix",
+      "spotify",
+      "youtube-premium",
+      "disney-plus",
+      "max",
+      "amazon-prime",
+      "apple-music"
+    ],
+    "US": [
+      "netflix",
+      "spotify",
+      "youtube-premium",
+      "disney-plus",
+      "hulu",
+      "max",
+      "amazon-prime",
+      "apple-music"
+    ]
+  }
 }

@@ -3,30 +3,32 @@
   "name": "Strava",
   "domain": "strava.com",
   "category": "Fitness",
-  "trialDays": 30,
-  "typicalPlans": [
+  "prices": [
     {
-      "label": "Annual",
-      "amount": "79.99",
-      "currencyCode": "USD",
-      "interval": {
-        "unit": "year",
-        "count": 1
-      }
-    },
-    {
-      "label": "Monthly",
-      "amount": "11.99",
-      "currencyCode": "USD",
-      "interval": {
-        "unit": "month",
-        "count": 1
-      }
+      "region": "US",
+      "checkedOn": "2026-10-30",
+      "sourceURL": "https://www.strava.com/pricing",
+      "trialDays": 30,
+      "plans": [
+        {
+          "label": "Annual",
+          "amount": "79.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "year",
+            "count": 1
+          }
+        },
+        {
+          "label": "Monthly",
+          "amount": "11.99",
+          "currencyCode": "USD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        }
+      ]
     }
-  ],
-  "priceInfo": {
-    "region": "US",
-    "checkedOn": "2026-10-30",
-    "sourceURL": "https://www.strava.com/pricing"
-  }
+  ]
 }
