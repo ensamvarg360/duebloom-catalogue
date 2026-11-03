@@ -47,6 +47,50 @@
           }
         }
       ]
+    },
+    {
+      "region": "GB",
+      "checkedOn": "2026-11-02",
+      "sourceURL": "https://www.spotify.com/uk/premium/",
+      "trialDays": 30,
+      "plans": [
+        {
+          "label": "Student",
+          "amount": "5.99",
+          "currencyCode": "GBP",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        },
+        {
+          "label": "Individual",
+          "amount": "12.99",
+          "currencyCode": "GBP",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        },
+        {
+          "label": "Duo",
+          "amount": "17.99",
+          "currencyCode": "GBP",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        },
+        {
+          "label": "Family",
+          "amount": "21.99",
+          "currencyCode": "GBP",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        }
+      ]
     }
   ]
 }

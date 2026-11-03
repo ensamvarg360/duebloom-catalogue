@@ -3,5 +3,41 @@
   "name": "Apple One",
   "domain": "apple.com",
   "category": "Storage",
-  "cancellationURL": "https://apps.apple.com/account/subscriptions"
+  "cancellationURL": "https://apps.apple.com/account/subscriptions",
+  "prices": [
+    {
+      "region": "GB",
+      "checkedOn": "2026-11-02",
+      "sourceURL": "https://www.apple.com/uk/apple-one/",
+      "plans": [
+        {
+          "label": "Individual",
+          "amount": "18.95",
+          "currencyCode": "GBP",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        },
+        {
+          "label": "Family",
+          "amount": "24.95",
+          "currencyCode": "GBP",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        },
+        {
+          "label": "Premier",
+          "amount": "36.95",
+          "currencyCode": "GBP",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        }
+      ]
+    }
+  ]
 }

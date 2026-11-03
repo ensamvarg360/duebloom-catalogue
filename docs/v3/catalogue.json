@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "revision": 202611030025,
+  "revision": 202611030326,
   "note": "Plans, prices and trial lengths are list prices read from the provider's own page on the date in each prices block (see docs/PRICING.md in the app repo). An entry with no prices block for a region has no verified price there. Prices are shown only in their region and only while recent (CatalogueEntry.localized). regional replaces the website or cancellation link in one region. popular is the list shown before anything is typed, per region, else default.",
   "popular": {
     "default": [
@@ -179,6 +179,41 @@
               }
             }
           ]
+        },
+        {
+          "region": "GB",
+          "checkedOn": "2026-11-02",
+          "sourceURL": "https://www.apple.com/uk/apple-music/",
+          "trialDays": 30,
+          "plans": [
+            {
+              "label": "Student",
+              "amount": "5.99",
+              "currencyCode": "GBP",
+              "interval": {
+                "unit": "month",
+                "count": 1
+              }
+            },
+            {
+              "label": "Individual",
+              "amount": "11.99",
+              "currencyCode": "GBP",
+              "interval": {
+                "unit": "month",
+                "count": 1
+              }
+            },
+            {
+              "label": "Family",
+              "amount": "19.99",
+              "currencyCode": "GBP",
+              "interval": {
+                "unit": "month",
+                "count": 1
+              }
+            }
+          ]
         }
       ]
     },
@@ -187,7 +222,43 @@
       "name": "Apple One",
       "domain": "apple.com",
       "category": "Storage",
-      "cancellationURL": "https://apps.apple.com/account/subscriptions"
+      "cancellationURL": "https://apps.apple.com/account/subscriptions",
+      "prices": [
+        {
+          "region": "GB",
+          "checkedOn": "2026-11-02",
+          "sourceURL": "https://www.apple.com/uk/apple-one/",
+          "plans": [
+            {
+              "label": "Individual",
+              "amount": "18.95",
+              "currencyCode": "GBP",
+              "interval": {
+                "unit": "month",
+                "count": 1
+              }
+            },
+            {
+              "label": "Family",
+              "amount": "24.95",
+              "currencyCode": "GBP",
+              "interval": {
+                "unit": "month",
+                "count": 1
+              }
+            },
+            {
+              "label": "Premier",
+              "amount": "36.95",
+              "currencyCode": "GBP",
+              "interval": {
+                "unit": "month",
+                "count": 1
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "apple-tv-plus",
@@ -211,6 +282,23 @@
               "label": "Monthly",
               "amount": "14.99",
               "currencyCode": "USD",
+              "interval": {
+                "unit": "month",
+                "count": 1
+              }
+            }
+          ]
+        },
+        {
+          "region": "GB",
+          "checkedOn": "2026-11-02",
+          "sourceURL": "https://www.apple.com/uk/apple-tv/",
+          "trialDays": 7,
+          "plans": [
+            {
+              "label": "Monthly",
+              "amount": "9.99",
+              "currencyCode": "GBP",
               "interval": {
                 "unit": "month",
                 "count": 1
@@ -578,6 +666,58 @@
               }
             }
           ]
+        },
+        {
+          "region": "GB",
+          "checkedOn": "2026-11-02",
+          "sourceURL": "https://support.apple.com/en-gb/108047",
+          "plans": [
+            {
+              "label": "50 GB",
+              "amount": "0.99",
+              "currencyCode": "GBP",
+              "interval": {
+                "unit": "month",
+                "count": 1
+              }
+            },
+            {
+              "label": "200 GB",
+              "amount": "2.99",
+              "currencyCode": "GBP",
+              "interval": {
+                "unit": "month",
+                "count": 1
+              }
+            },
+            {
+              "label": "2 TB",
+              "amount": "8.99",
+              "currencyCode": "GBP",
+              "interval": {
+                "unit": "month",
+                "count": 1
+              }
+            },
+            {
+              "label": "6 TB",
+              "amount": "26.99",
+              "currencyCode": "GBP",
+              "interval": {
+                "unit": "month",
+                "count": 1
+              }
+            },
+            {
+              "label": "12 TB",
+              "amount": "54.99",
+              "currencyCode": "GBP",
+              "interval": {
+                "unit": "month",
+                "count": 1
+              }
+            }
+          ]
         }
       ]
     },
@@ -670,6 +810,40 @@
               "label": "Premium",
               "amount": "22.99",
               "currencyCode": "USD",
+              "interval": {
+                "unit": "month",
+                "count": 1
+              }
+            }
+          ]
+        },
+        {
+          "region": "GB",
+          "checkedOn": "2026-11-02",
+          "sourceURL": "https://www.hbomax.com/gb/en",
+          "plans": [
+            {
+              "label": "Standard with ads",
+              "amount": "5.99",
+              "currencyCode": "GBP",
+              "interval": {
+                "unit": "month",
+                "count": 1
+              }
+            },
+            {
+              "label": "Standard",
+              "amount": "9.99",
+              "currencyCode": "GBP",
+              "interval": {
+                "unit": "month",
+                "count": 1
+              }
+            },
+            {
+              "label": "Premium",
+              "amount": "14.99",
+              "currencyCode": "GBP",
               "interval": {
                 "unit": "month",
                 "count": 1
@@ -947,6 +1121,50 @@
               "label": "Family",
               "amount": "21.99",
               "currencyCode": "USD",
+              "interval": {
+                "unit": "month",
+                "count": 1
+              }
+            }
+          ]
+        },
+        {
+          "region": "GB",
+          "checkedOn": "2026-11-02",
+          "sourceURL": "https://www.spotify.com/uk/premium/",
+          "trialDays": 30,
+          "plans": [
+            {
+              "label": "Student",
+              "amount": "5.99",
+              "currencyCode": "GBP",
+              "interval": {
+                "unit": "month",
+                "count": 1
+              }
+            },
+            {
+              "label": "Individual",
+              "amount": "12.99",
+              "currencyCode": "GBP",
+              "interval": {
+                "unit": "month",
+                "count": 1
+              }
+            },
+            {
+              "label": "Duo",
+              "amount": "17.99",
+              "currencyCode": "GBP",
+              "interval": {
+                "unit": "month",
+                "count": 1
+              }
+            },
+            {
+              "label": "Family",
+              "amount": "21.99",
+              "currencyCode": "GBP",
               "interval": {
                 "unit": "month",
                 "count": 1

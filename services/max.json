@@ -69,6 +69,40 @@
           }
         }
       ]
+    },
+    {
+      "region": "GB",
+      "checkedOn": "2026-11-02",
+      "sourceURL": "https://www.hbomax.com/gb/en",
+      "plans": [
+        {
+          "label": "Standard with ads",
+          "amount": "5.99",
+          "currencyCode": "GBP",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        },
+        {
+          "label": "Standard",
+          "amount": "9.99",
+          "currencyCode": "GBP",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        },
+        {
+          "label": "Premium",
+          "amount": "14.99",
+          "currencyCode": "GBP",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        }
+      ]
     }
   ]
 }

@@ -26,6 +26,23 @@
           }
         }
       ]
+    },
+    {
+      "region": "GB",
+      "checkedOn": "2026-11-02",
+      "sourceURL": "https://www.apple.com/uk/apple-tv/",
+      "trialDays": 7,
+      "plans": [
+        {
+          "label": "Monthly",
+          "amount": "9.99",
+          "currencyCode": "GBP",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        }
+      ]
     }
   ]
 }
