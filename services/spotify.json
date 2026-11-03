@@ -91,6 +91,50 @@
           }
         }
       ]
+    },
+    {
+      "region": "CA",
+      "checkedOn": "2026-11-03",
+      "sourceURL": "https://www.spotify.com/ca-en/premium/",
+      "trialDays": 30,
+      "plans": [
+        {
+          "label": "Student",
+          "amount": "6.39",
+          "currencyCode": "CAD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        },
+        {
+          "label": "Individual",
+          "amount": "13.99",
+          "currencyCode": "CAD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        },
+        {
+          "label": "Duo",
+          "amount": "19.99",
+          "currencyCode": "CAD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        },
+        {
+          "label": "Family",
+          "amount": "23.99",
+          "currencyCode": "CAD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        }
+      ]
     }
   ]
 }

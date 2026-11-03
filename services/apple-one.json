@@ -38,6 +38,40 @@
           }
         }
       ]
+    },
+    {
+      "region": "CA",
+      "checkedOn": "2026-11-03",
+      "sourceURL": "https://www.apple.com/ca/apple-one/",
+      "plans": [
+        {
+          "label": "Individual",
+          "amount": "22.95",
+          "currencyCode": "CAD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        },
+        {
+          "label": "Family",
+          "amount": "30.95",
+          "currencyCode": "CAD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        },
+        {
+          "label": "Premier",
+          "amount": "46.95",
+          "currencyCode": "CAD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        }
+      ]
     }
   ]
 }

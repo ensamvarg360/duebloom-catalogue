@@ -43,6 +43,23 @@
           }
         }
       ]
+    },
+    {
+      "region": "CA",
+      "checkedOn": "2026-11-03",
+      "sourceURL": "https://www.apple.com/ca/apple-tv/",
+      "trialDays": 7,
+      "plans": [
+        {
+          "label": "Monthly",
+          "amount": "14.99",
+          "currencyCode": "CAD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        }
+      ]
     }
   ]
 }

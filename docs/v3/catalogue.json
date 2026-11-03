@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "revision": 202611030326,
+  "revision": 202611031347,
   "note": "Plans, prices and trial lengths are list prices read from the provider's own page on the date in each prices block (see docs/PRICING.md in the app repo). An entry with no prices block for a region has no verified price there. Prices are shown only in their region and only while recent (CatalogueEntry.localized). regional replaces the website or cancellation link in one region. popular is the list shown before anything is typed, per region, else default.",
   "popular": {
     "default": [
@@ -214,6 +214,41 @@
               }
             }
           ]
+        },
+        {
+          "region": "CA",
+          "checkedOn": "2026-11-03",
+          "sourceURL": "https://www.apple.com/ca/apple-music/",
+          "trialDays": 30,
+          "plans": [
+            {
+              "label": "Student",
+              "amount": "5.99",
+              "currencyCode": "CAD",
+              "interval": {
+                "unit": "month",
+                "count": 1
+              }
+            },
+            {
+              "label": "Individual",
+              "amount": "11.99",
+              "currencyCode": "CAD",
+              "interval": {
+                "unit": "month",
+                "count": 1
+              }
+            },
+            {
+              "label": "Family",
+              "amount": "19.99",
+              "currencyCode": "CAD",
+              "interval": {
+                "unit": "month",
+                "count": 1
+              }
+            }
+          ]
         }
       ]
     },
@@ -251,6 +286,40 @@
               "label": "Premier",
               "amount": "36.95",
               "currencyCode": "GBP",
+              "interval": {
+                "unit": "month",
+                "count": 1
+              }
+            }
+          ]
+        },
+        {
+          "region": "CA",
+          "checkedOn": "2026-11-03",
+          "sourceURL": "https://www.apple.com/ca/apple-one/",
+          "plans": [
+            {
+              "label": "Individual",
+              "amount": "22.95",
+              "currencyCode": "CAD",
+              "interval": {
+                "unit": "month",
+                "count": 1
+              }
+            },
+            {
+              "label": "Family",
+              "amount": "30.95",
+              "currencyCode": "CAD",
+              "interval": {
+                "unit": "month",
+                "count": 1
+              }
+            },
+            {
+              "label": "Premier",
+              "amount": "46.95",
+              "currencyCode": "CAD",
               "interval": {
                 "unit": "month",
                 "count": 1
@@ -299,6 +368,23 @@
               "label": "Monthly",
               "amount": "9.99",
               "currencyCode": "GBP",
+              "interval": {
+                "unit": "month",
+                "count": 1
+              }
+            }
+          ]
+        },
+        {
+          "region": "CA",
+          "checkedOn": "2026-11-03",
+          "sourceURL": "https://www.apple.com/ca/apple-tv/",
+          "trialDays": 7,
+          "plans": [
+            {
+              "label": "Monthly",
+              "amount": "14.99",
+              "currencyCode": "CAD",
               "interval": {
                 "unit": "month",
                 "count": 1
@@ -712,6 +798,58 @@
               "label": "12 TB",
               "amount": "54.99",
               "currencyCode": "GBP",
+              "interval": {
+                "unit": "month",
+                "count": 1
+              }
+            }
+          ]
+        },
+        {
+          "region": "CA",
+          "checkedOn": "2026-11-03",
+          "sourceURL": "https://support.apple.com/en-ca/108047",
+          "plans": [
+            {
+              "label": "50 GB",
+              "amount": "1.29",
+              "currencyCode": "CAD",
+              "interval": {
+                "unit": "month",
+                "count": 1
+              }
+            },
+            {
+              "label": "200 GB",
+              "amount": "3.99",
+              "currencyCode": "CAD",
+              "interval": {
+                "unit": "month",
+                "count": 1
+              }
+            },
+            {
+              "label": "2 TB",
+              "amount": "12.99",
+              "currencyCode": "CAD",
+              "interval": {
+                "unit": "month",
+                "count": 1
+              }
+            },
+            {
+              "label": "6 TB",
+              "amount": "39.99",
+              "currencyCode": "CAD",
+              "interval": {
+                "unit": "month",
+                "count": 1
+              }
+            },
+            {
+              "label": "12 TB",
+              "amount": "79.99",
+              "currencyCode": "CAD",
               "interval": {
                 "unit": "month",
                 "count": 1
@@ -1165,6 +1303,50 @@
               "label": "Family",
               "amount": "21.99",
               "currencyCode": "GBP",
+              "interval": {
+                "unit": "month",
+                "count": 1
+              }
+            }
+          ]
+        },
+        {
+          "region": "CA",
+          "checkedOn": "2026-11-03",
+          "sourceURL": "https://www.spotify.com/ca-en/premium/",
+          "trialDays": 30,
+          "plans": [
+            {
+              "label": "Student",
+              "amount": "6.39",
+              "currencyCode": "CAD",
+              "interval": {
+                "unit": "month",
+                "count": 1
+              }
+            },
+            {
+              "label": "Individual",
+              "amount": "13.99",
+              "currencyCode": "CAD",
+              "interval": {
+                "unit": "month",
+                "count": 1
+              }
+            },
+            {
+              "label": "Duo",
+              "amount": "19.99",
+              "currencyCode": "CAD",
+              "interval": {
+                "unit": "month",
+                "count": 1
+              }
+            },
+            {
+              "label": "Family",
+              "amount": "23.99",
+              "currencyCode": "CAD",
               "interval": {
                 "unit": "month",
                 "count": 1

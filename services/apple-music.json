@@ -77,6 +77,41 @@
           }
         }
       ]
+    },
+    {
+      "region": "CA",
+      "checkedOn": "2026-11-03",
+      "sourceURL": "https://www.apple.com/ca/apple-music/",
+      "trialDays": 30,
+      "plans": [
+        {
+          "label": "Student",
+          "amount": "5.99",
+          "currencyCode": "CAD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        },
+        {
+          "label": "Individual",
+          "amount": "11.99",
+          "currencyCode": "CAD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        },
+        {
+          "label": "Family",
+          "amount": "19.99",
+          "currencyCode": "CAD",
+          "interval": {
+            "unit": "month",
+            "count": 1
+          }
+        }
+      ]
     }
   ]
 }
