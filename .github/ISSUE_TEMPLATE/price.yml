@@ -1,0 +1,41 @@
+name: Suggest a price
+description: Prices for a service in a country where Duebloom shows none.
+title: "Price for "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks! Duebloom lists only prices read on the provider's own page, so we'll check the page you link before adding anything.
+        This issue is public: please don't include account emails, what you pay, or anything private.
+  - type: input
+    id: service
+    attributes:
+      label: Service
+    validations:
+      required: true
+  - type: input
+    id: country
+    attributes:
+      label: Country
+      description: Two-letter code, such as GB or CA.
+    validations:
+      required: true
+  - type: textarea
+    id: plans
+    attributes:
+      label: Plans and prices
+      description: Each plan's name, price and billing period as the page shows them, such as "Standard, £5.99 a month".
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Page where you saw them
+      description: The provider's own pricing page.
+      placeholder: https://
+    validations:
+      required: true
+  - type: input
+    id: trial
+    attributes:
+      label: Free trial, if the page shows one
