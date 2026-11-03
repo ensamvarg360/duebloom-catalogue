@@ -1,0 +1,41 @@
+name: Report a wrong price
+description: A price, plan or free trial Duebloom shows that doesn't match the provider's page.
+title: "Wrong price for "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks! We change a price only after reading it on the provider's own page, so please link it.
+        Prices often differ from what one person pays (promotions, student or family shares, older prices, tax), so tell us what the page shows, not your bill.
+        This issue is public: please don't include account emails or anything private.
+  - type: input
+    id: service
+    attributes:
+      label: Service
+    validations:
+      required: true
+  - type: input
+    id: country
+    attributes:
+      label: Country
+      description: Two-letter code, such as US, GB or CA.
+    validations:
+      required: true
+  - type: textarea
+    id: shown
+    attributes:
+      label: What Duebloom shows
+  - type: textarea
+    id: correct
+    attributes:
+      label: What the provider's page shows
+      description: Each plan's name, price and billing period, and any free trial.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Link to that page
+      placeholder: https://
+    validations:
+      required: true
